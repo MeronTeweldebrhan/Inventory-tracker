@@ -13,7 +13,7 @@ quantity: number=1;
      name: string,
      price: number,
      quantity: number,
- 
+
   ) {
     this.sku = sku;
     this.name = name;
@@ -21,8 +21,8 @@ quantity: number=1;
     this.quantity = quantity;
   }
 
-getpriceWithTax():number{ 
-    return calculateTax(this); 
+getpriceWithTax():number{
+    return calculateTax(this);
 }
 
 displayDetails(): string {
@@ -34,6 +34,11 @@ applyDiscount(discount: number): void {
       throw new Error("Discount percentage must be between 0 and 100");
     }
     this.price = this.price * (1 - discount / 100);
+  }
+
+  // Method to identify if this is a digital product (default: false)
+  isDigitalProduct(): boolean {
+    return false;
   }
 }
 
