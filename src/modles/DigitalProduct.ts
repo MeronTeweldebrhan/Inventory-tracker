@@ -2,9 +2,6 @@ import { Product } from "./Product";
 
 export class digitalProduct extends Product{
     fileSize:number;
-
-
-
  constructor ( 
     sku: string,
     name: string,
@@ -18,7 +15,7 @@ export class digitalProduct extends Product{
    
   }
  getpriceWithTax():number{
-    return this.price
+    return this.price            // No tax for digital products
     
  }
 getfileSize(): String {

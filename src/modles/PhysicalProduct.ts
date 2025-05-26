@@ -2,7 +2,7 @@ import { Product } from "./Product";
 import {calculateTax} from "./utils/taxCalculator"
 import { DiscountableProduct } from "./utils/discountableProduct";
 
-
+//
 export class Physicalproduct extends Product implements DiscountableProduct{
   weight: number;
   private static readonly BULK_QUANTITY_THRESHOLD = 10;
@@ -33,6 +33,7 @@ export class Physicalproduct extends Product implements DiscountableProduct{
 displayDetails(): string {
 return super.displayDetails() + ` It weighs ${this.weight} kg.`;
 }
+// Apply a discount based on quantity or weight
 applyDiscount(discount: number = 0): void {
     if (discount < 0 || discount > 100) {
       throw new Error("Discount percentage must be between 0 and 100");
